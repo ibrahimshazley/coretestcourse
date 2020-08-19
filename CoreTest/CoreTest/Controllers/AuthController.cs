@@ -32,7 +32,7 @@ namespace CoreTest.Controllers
         public async Task<IActionResult> Register([FromBody]UserForRegistrerDTO userForRegistrerDTO)
         {
             //validate request 
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
             userForRegistrerDTO.Username = userForRegistrerDTO.Username.ToLower();
