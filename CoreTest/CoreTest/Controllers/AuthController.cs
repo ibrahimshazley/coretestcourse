@@ -22,7 +22,7 @@ namespace CoreTest.Controllers
         private readonly IAuthRepository _repo;
         private readonly IConfiguration _config;
 
-        public AuthController(IAuthRepository repo,IConfiguration config)
+        public AuthController(IAuthRepository repo, IConfiguration config)
         {
             _repo = repo;
             _config = config;
@@ -52,9 +52,11 @@ namespace CoreTest.Controllers
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody]UserForLoginDto userForLoginDto)
         {
+            //try
+            //{
             var userFromRepo = await _repo.Login(userForLoginDto.Username.ToLower(), userForLoginDto.Password);
 
-            if (userFromRepo ==null)
+            if (userFromRepo == null)
             {
                 return Unauthorized();
             }
@@ -79,7 +81,15 @@ namespace CoreTest.Controllers
             return Ok(new
             {
                 token = tokenHandler.WriteToken(token)
-            }) ;
-        } 
+            });
+
+            //}
+            //catch (Exception)
+            //{
+
+            //    return StatusCode(500, "Computer really Says No");
+            //}
+
+        }
     }
 }
