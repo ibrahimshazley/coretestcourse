@@ -6,6 +6,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20200908173727_ExtendedUserClass.cs" />
+    <Compile Remove="Migrations\20200908173727_ExtendedUserClass.Designer.cs" />
+    <Compile Remove="Migrations\20200908183102_ExtendedUserClass2.cs" />
+    <Compile Remove="Migrations\20200908183102_ExtendedUserClass2.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="4.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="2.1.0" />
