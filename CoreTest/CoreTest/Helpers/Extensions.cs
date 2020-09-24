@@ -14,5 +14,14 @@ namespace CoreTest.Helpers
             response.Headers.Add("Access-Control-Expose-Headers","Application-Error");
             response.Headers.Add("Access-Control-Allow-Origin", "*");
         }
+        public static int CalculateAge(this DateTime TheDateTime)
+        {
+            var Age = DateTime.Today.Year - TheDateTime.Year;
+            if (TheDateTime.AddYears(Age) > DateTime.Today)
+            {
+                Age--;
+            }
+            return Age;
+        }
     }
 }
