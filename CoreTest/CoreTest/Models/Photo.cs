@@ -15,8 +15,4 @@ namespace CoreTest.Models
         public User User { get; set; }
         public int UserId { get; set; }
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> c610c7b6f5d8495ee28f3ae882bafb9204d35585
