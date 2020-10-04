@@ -32,6 +32,10 @@ namespace CoreTest.Helpers
             CreateMap<Photo, PhotosForDetaiedDTO>();
 
             CreateMap<UserForUpdateDTO, User>();
+            CreateMap<Photo, PhotoForReturnDTO>();
+            CreateMap<PhotoForCreationDTO, Photo>();
+
+
 
 
         }
