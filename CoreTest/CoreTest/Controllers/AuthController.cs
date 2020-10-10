@@ -43,13 +43,10 @@ namespace CoreTest.Controllers
             {
                 return BadRequest("Username Already Exist");
             }
-            var userToCreate = new User
-            {
-                Username = userForRegistrerDTO.Username
-            };
+            var userToCreate = _mapper.Map<User>(userForRegistrerDTO);
             var createdUser = await _repo.Register(userToCreate, userForRegistrerDTO.Password);
-
-            return StatusCode(201);
+            var UserToRetern = _mapper.Map<UserForDetailedDTO>(createdUser);
+            return CreatedAtRoute("GetUser",new { Controller="Users",id = createdUser.id}, UserToRetern);
         }
 
         [HttpPost("login")]
