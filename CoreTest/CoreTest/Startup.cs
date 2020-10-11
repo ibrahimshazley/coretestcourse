@@ -62,7 +62,7 @@ namespace CoreTest
                   };
               });
 
-        
+            services.AddScoped<LogUserActivity>();
 
 
 

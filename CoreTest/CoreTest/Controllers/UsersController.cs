@@ -6,12 +6,14 @@ using System.Threading.Tasks;
 using AutoMapper;
 using CoreTest.Data;
 using CoreTest.DTOs;
+using CoreTest.Helpers;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CoreTest.Controllers
 {
+    [ServiceFilter(typeof(LogUserActivity))]
     [Authorize]
     [Route("api/[controller]")]
     [ApiController]
